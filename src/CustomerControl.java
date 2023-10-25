@@ -18,6 +18,8 @@ public class CustomerControl {
 
         System.out.print("Name:..");
         String name=scanner.nextLine();
+        System.out.print("nickName:..");
+        String nickname=scanner.nextLine();
         System.out.print("Phone Number:..");
         String phoneNumber=scanner.nextLine();
         System.out.print("Address:..");
@@ -28,10 +30,9 @@ public class CustomerControl {
         double subscriptionQuantity=scanner.nextDouble();
 
         Customer customer;
-        customer = new Customer(name,phoneNumber,address,subscriptionType,subscriptionQuantity);
+        customer = new Customer(name, nickname, phoneNumber,address,subscriptionType,subscriptionQuantity);
         addCustomer(customer);
     }
-
     public void displayAll (ArrayList<Customer> customers){
         for (Customer customer : customers) {
             System.out.println("Name \t\t\t" + customer.getName());
