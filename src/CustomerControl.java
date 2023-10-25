@@ -39,7 +39,7 @@ public class CustomerControl {
             System.out.println("Phone Number \t" + customer.getPhoneNumber());
             System.out.println("Address \t\t" + customer.getAddress());
             System.out.println("Subscription Type \t" + customer.getSubscriptionType());
-            System.out.println("Subscription Quantity " + customer.getSubscriptionQuantity());
+            System.out.println("Subscription Quantity (in digits)" + customer.getSubscriptionQuantity());
         }
     }
 
