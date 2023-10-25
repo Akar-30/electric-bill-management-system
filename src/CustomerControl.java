@@ -26,7 +26,7 @@ public class CustomerControl {
         String address=scanner.nextLine();
         System.out.print("Subscription Type:..");
         String subscriptionType=scanner.nextLine();
-        System.out.print("Subscription Quantity:..");
+        System.out.print("Subscription Quantity:..(in digits)..");
         double subscriptionQuantity=scanner.nextDouble();
 
         Customer customer;
@@ -36,10 +36,11 @@ public class CustomerControl {
     public void displayAll (ArrayList<Customer> customers){
         for (Customer customer : customers) {
             System.out.println("Name \t\t\t" + customer.getName());
+            System.out.println("nickName \t\t\t" + customer.getNickname());
             System.out.println("Phone Number \t" + customer.getPhoneNumber());
             System.out.println("Address \t\t" + customer.getAddress());
             System.out.println("Subscription Type \t" + customer.getSubscriptionType());
-            System.out.println("Subscription Quantity (in digits)" + customer.getSubscriptionQuantity());
+            System.out.println("Subscription Quantity " + customer.getSubscriptionQuantity());
         }
     }
 
