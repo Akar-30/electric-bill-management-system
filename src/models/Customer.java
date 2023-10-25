@@ -3,6 +3,7 @@ import java.sql.Date;
 import java.util.List;
 import java.util.UUID;
 //import java.util.Date;
+import java.util.Scanner;
 
 public class Customer {
     UUID uniqueId = UUID.randomUUID();
@@ -66,6 +67,10 @@ public class Customer {
 
     public String getNickname() {
         return nickname;
+    }
+
+    public UUID getUniqueId() {
+        return uniqueId;
     }
 }
 
