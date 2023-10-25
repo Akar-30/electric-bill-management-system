@@ -18,7 +18,7 @@ public class Customer {
     private List<PaymentRecord> paymentHistory;
     private Date startDate;
     private Date subscriptionExpiryDate;
-    private int ownerTeamMemberID;
+    private String ownerTeamMemberID;
     private String status;
     private Date subscriptionRenewalDate;
 
