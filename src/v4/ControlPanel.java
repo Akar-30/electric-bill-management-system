@@ -15,17 +15,24 @@ public class ControlPanel {
             System.out.println("Welcome to Control Panel");
             System.out.println("1. Employee Screen");
             System.out.println("2. Customer Screen");
-            System.out.println("3. Quit");
+            System.out.println("3. Reports");
+            System.out.println("4. Quit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
 
             switch (choice) {
                 case 1 -> handleEmployeeOptions(employees, scanner);
                 case 2 -> handleCustomerOptions(customers, scanner);
-                case 3 -> System.out.println("Exiting Control Panel. Goodbye!");
+                case 3 -> reports(employees,customers);
+                case 4 -> System.out.println("Exiting Control Panel. Goodbye!");
                 default -> System.out.println("Invalid choice. Please enter a valid option.");
             }
-        } while (choice != 3);
+        } while (choice != 4);
+    }
+
+    private static void reports(ArrayList<Employee> employees,ArrayList<Customer> customers){
+        Report report = new Report(employees,customers);
+        report.generateReport();
     }
 
     private static String editEmployee(Employee employee, Scanner scanner) {
@@ -69,7 +76,7 @@ public class ControlPanel {
                 employee.setSalary(newSalary);
             }
             case "type" -> {
-                System.out.print("Enter new employee type (Full-time, Part-time): ");
+                System.out.print("Enter new employee type (1. Full-time,  2. Part-time): ");
                 scanner.nextLine(); // Consume newline
                 String newType = scanner.nextLine();
                 employee.setEmployeeType(newType);
@@ -165,7 +172,7 @@ public class ControlPanel {
                     String empAddress = scanner.nextLine();
                     System.out.print("Enter employee email: ");
                     String empEmail = scanner.nextLine();
-                    System.out.print("Enter employee salary:(in dollar $) ");
+                    System.out.print("Enter employee salary:(in IQD) ");
                     double empSalary = scanner.nextDouble();
                     System.out.print("Enter employee type (Full-time, Part-time): ");
                     scanner.nextLine(); // Consume newline
