@@ -13,8 +13,8 @@ public class ControlPanel {
 
         do {
             System.out.println("Welcome to Control Panel");
-            System.out.println("1. Employee Home");
-            System.out.println("2. Customer Home");
+            System.out.println("1. Employee Screen");
+            System.out.println("2. Customer Screen");
             System.out.println("3. Quit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
