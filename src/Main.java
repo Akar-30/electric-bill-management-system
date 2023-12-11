@@ -4,6 +4,6 @@ public class Main {
     public static void main(String[] args) {
 
         ControlPanel cp = new ControlPanel();
-        cp.main(args);
+        cp.mainScreen();
     }
 }
