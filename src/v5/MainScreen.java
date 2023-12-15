@@ -15,12 +15,13 @@ public class MainScreen {
 
             CustomerScreen customerControl = new CustomerScreen(dbConnection);
             EmployeeScreen employeeControl = new EmployeeScreen(dbConnection);
+            Report report = new Report(dbConnection);
 
             Scanner scanner = new Scanner(System.in);
             int choice;
 
             do {
-                System.out.println("Welcome to Control Panel");
+                System.out.println("WELCOME TO MAIN SCREEN");
                 System.out.println("1. Employee Screen");
                 System.out.println("2. Customer Screen");
                 System.out.println("3. Reports");
@@ -31,14 +32,11 @@ public class MainScreen {
                 switch (choice) {
                     case 1 -> employeeControl.handleOptions();
                     case 2 -> customerControl.handleOptions();
-                    //case 3 -> reports(employeeControl.getEmployees(),customerControl.getCustomers());
-                    case 4 -> System.out.println("Exiting Control Panel. Goodbye!");
+                    case 3 -> report.generateReport();
+                    case 4 -> System.out.println("Exiting MAIN SCREEN. Goodbye!");
                     default -> System.out.println("Invalid choice. Please enter a valid option.");
                 }
             } while (choice != 4);
-
-        //Customer newCustomer = new Customer(/* Customer details */);
-        //customerControl.addCustomerToDatabase(newCustomer);
 
         } finally {
             if (dbConnection != null) {
@@ -49,12 +47,6 @@ public class MainScreen {
                 }
             }
         }
-    }
-
-
-    private static void reports(ArrayList<Employee> employees, ArrayList<Customer> customers){
-        Report report = new Report(employees,customers);
-        report.generateReport();
     }
 
 }

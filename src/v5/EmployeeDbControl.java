@@ -37,25 +37,36 @@ public class EmployeeDbControl {
 
     // Method to display table
     private static void displayTable(String[] data) {
-        int[] columnWidths = new int[data.length];
+        int numColumns = data.length;
 
         // Calculate column widths
-        for (int i = 0; i < data.length; i++) {
-            if (data[i].length() > columnWidths[i]) {
-                columnWidths[i] = data[i].length();
-            }
-        }
+        int[] columnWidths = calculateColumnWidths(data);
 
-        // Display row data in a formatted table
-        for (int i = 0; i < data.length; i++) {
-            System.out.print(data[i]);
-            int padding = columnWidths[i] - data[i].length() + 2; // Padding between columns
-            for (int j = 0; j < padding; j++) {
-                System.out.print(" ");
+        // Display table content
+        int numRows = (int) Math.ceil((double) data.length / numColumns);
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numColumns; j++) {
+                int index = i + j * numRows;
+                if (index < data.length) {
+                    System.out.printf("%-20s", data[index]);
+                }
             }
+            System.out.println();
         }
-        System.out.println();
     }
+
+    private static int[] calculateColumnWidths(String[] data) {
+        int numColumns = data.length;
+        int[] columnWidths = new int[numColumns];
+
+        for (int i = 0; i < numColumns; i++) {
+            columnWidths[i] = data[i].length();
+        }
+        return columnWidths;
+    }
+
+
+
 
     // Method to retrieve data as to table
     public void viewEmployeesFromDatabase() {
@@ -70,7 +81,7 @@ public class EmployeeDbControl {
                 System.out.println("Employees in the database:");
 
                 // Table headers
-                String[] headers = {"ID", "Name", "Phone Number", "Subscription Type", "Subscription Quantity", "Status", "Balance"};
+                String[] headers = {"ID", "Name", "Phone Number", "Employee Type", "Salary"};
                 displayTable(headers);
 
                 while (resultSet.next()) {
@@ -78,20 +89,16 @@ public class EmployeeDbControl {
                     String firstName = resultSet.getString("fName");
                     String lastName = resultSet.getString("nickName");
                     String phoneNumber = resultSet.getString("phoneNumber");
-                    String subscriptionType = resultSet.getString("subscriptionType");
-                    int subscriptionQuantity = resultSet.getInt("ampere");
-                    String status = resultSet.getString("status");
-                    double balance = resultSet.getDouble("balance");
+                    String employeeType = resultSet.getString("type");
+                    double salary = resultSet.getDouble("salary");
 
                     // Formatted row data
                     String[] rowData = {
                             String.valueOf(employeeId),
                             firstName + " " + lastName,
                             phoneNumber,
-                            subscriptionType,
-                            String.valueOf(subscriptionQuantity),
-                            status,
-                            String.valueOf(balance)
+                            employeeType,
+                            String.valueOf(salary)
                     };
 
                     displayTable(rowData);

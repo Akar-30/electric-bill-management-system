@@ -2,8 +2,26 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
+  </component>
+  <component name="DBNavigator.Project.DataExportManager">
+    <export-instructions>
+      <create-header value="true" />
+      <friendly-headers value="false" />
+      <quote-values-containing-separator value="true" />
+      <quote-all-values value="false" />
+      <value-separator value="" />
+      <begin-quote value="&quot;" />
+      <end-quote value="&quot;" />
+      <file-name value="" />
+      <file-location value="" />
+      <scope value="GLOBAL" />
+      <destination value="FILE" />
+      <format value="EXCEL" />
+      <charset value="windows-1252" />
+      <charset value="windows-1252" />
+    </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
@@ -16,7 +34,7 @@
       <console name="MySQL Connection" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea">
-      <console name="Connection" type="STANDARD" schema="" session="Main" />
+      <console name="Connection" type="STANDARD" schema="oop" session="Main" />
     </connection>
     <connection id="e79c73f4-5fee-460f-b67b-9dfb386065db">
       <console name="Connection 1" type="STANDARD" schema="" session="Main" />
@@ -28,12 +46,20 @@
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
       <object connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" object-ref="schemas/oop/tables/customer" />
-      <object connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" object-ref="consoles/Connection" />
+      <object connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" object-ref="schemas/oop/tables/employee" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" dataset="oop.customer" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" dataset="oop.employee" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" dataset="oop.customer" active-filter-id="6c7a19dc-38cc-41db-a4ca-dd0fbfc910e1">
+      <filter id="6c7a19dc-38cc-41db-a4ca-dd0fbfc910e1" name="0" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="idcustomer" operator="&gt;" value="0" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" dataset="oop.employee" active-filter-id="ddeb7b52-d5bf-40b1-b287-3c6b2ca798b8">
+      <filter id="ddeb7b52-d5bf-40b1-b287-3c6b2ca798b8" name="0" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="idEmployee" operator="&gt;" value="0" active="true" />
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="fefb4ac1-1e35-4b09-bde0-36e3a4d9f926" dataset="electribill.customer" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
@@ -719,5 +745,9 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
+    <execution-variable-types />
   </component>
 </project>

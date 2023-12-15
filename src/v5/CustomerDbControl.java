@@ -38,25 +38,35 @@ public class CustomerDbControl {
 
     // Method to display table
     private static void displayTable(String[] data) {
-        int[] columnWidths = new int[data.length];
+        int numColumns = data.length;
 
         // Calculate column widths
-        for (int i = 0; i < data.length; i++) {
-            if (data[i].length() > columnWidths[i]) {
-                columnWidths[i] = data[i].length();
-            }
-        }
+        int[] columnWidths = calculateColumnWidths(data);
 
-        // Display row data in a formatted table
-        for (int i = 0; i < data.length; i++) {
-            System.out.print(data[i]);
-            int padding = columnWidths[i] - data[i].length() + 2; // Padding between columns
-            for (int j = 0; j < padding; j++) {
-                System.out.print(" ");
+        // Display table content
+        int numRows = (int) Math.ceil((double) data.length / numColumns);
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numColumns; j++) {
+                int index = i + j * numRows;
+                if (index < data.length) {
+                    System.out.printf("%-20s", data[index]);
+                }
             }
+            System.out.println();
         }
-        System.out.println();
     }
+
+    private static int[] calculateColumnWidths(String[] data) {
+        int numColumns = data.length;
+        int[] columnWidths = new int[numColumns];
+
+        for (int i = 0; i < numColumns; i++) {
+            columnWidths[i] = data[i].length();
+        }
+        return columnWidths;
+    }
+
+
 
     // Method to retrieve data as to table
     public void viewCustomersFromDatabase() {
@@ -71,7 +81,7 @@ public class CustomerDbControl {
                 System.out.println("Customers in the database:");
 
                 // Table headers
-                String[] headers = {"ID", "Name", "Phone Number", "Subscription Type", "Subscription Quantity", "Status", "Balance"};
+                String[] headers = {"ID", "Name", "Phone Number", "Type", "Ampere", "Status", "Balance"};
                 displayTable(headers);
 
                 while (resultSet.next()) {

@@ -43,9 +43,9 @@ public class EmployeeScreen {
                     String empAddress = scanner.nextLine();
                     System.out.print("Enter employee email: ");
                     String empEmail = scanner.nextLine();
+                    System.out.print("Enter employee type (Full-time, Part-time): ");
                     System.out.print("Enter employee salary:(in IQD) ");
                     double empSalary = scanner.nextDouble();
-                    System.out.print("Enter employee type (Full-time, Part-time): ");
                     scanner.nextLine(); // Consume newline
                     String empType = scanner.nextLine();
 
