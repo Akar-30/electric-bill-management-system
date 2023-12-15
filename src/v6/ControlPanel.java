@@ -1,4 +1,4 @@
-package v4;
+package v6;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -30,7 +30,7 @@ public class ControlPanel {
         } while (choice != 4);
     }
 
-    private static void reports(ArrayList<Employee> employees,ArrayList<Customer> customers){
+    private static void reports(ArrayList<Employee> employees, ArrayList<Customer> customers){
         Report report = new Report(employees,customers);
         report.generateReport();
     }

@@ -1,4 +1,4 @@
-package v4;
+package v5;
 
 import java.util.Random;
 
@@ -6,6 +6,7 @@ class Customer extends Person {
     private  String subscriptionType;
     private  int subscriptionQuantity;
     private final String status;
+    private double balance;
 
     public Customer(String name, String nickname,String gender, String phoneNumber,String address, String email,String subscriptionType, int subscriptionQuantity) {
         super( name, nickname,gender, phoneNumber, address, email);
@@ -17,6 +18,15 @@ class Customer extends Person {
     }
 
     // Getters and Setters for Customer properties
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public String getSubscriptionType() {
         return subscriptionType;
     }
@@ -29,7 +39,7 @@ class Customer extends Person {
         this.subscriptionType = subscriptionType;
     }
 
-    public double getSubscriptionQuantity() {
+    public int getSubscriptionQuantity() {
         return subscriptionQuantity;
     }
 
