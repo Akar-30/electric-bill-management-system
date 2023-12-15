@@ -135,8 +135,8 @@ public class EmployeeDbControl {
     public void displayColumnTable() {
         String[] columnNames = {
                 "Name", "Nickname", "Gender", "Phone Number",
-                "Address", "Email", "Subscription Type",
-                "Ampere", "Status", "Balance"
+                "Address", "Email", "Employee Type",
+                "Salary"
         };
 
         System.out.println("Column Index | Column Name");
@@ -174,8 +174,8 @@ public class EmployeeDbControl {
     private String getColumnName(int index) {
         String[] columnNames = {
                 "fName", "nickname", "gender", "phoneNumber",
-                "address", "email", "subscriptionType",
-                "ampere", "status", "balance"
+                "address", "email", "type",
+                "salary"
         };
         if (index > 0 && index <= columnNames.length) {
             return columnNames[index - 1];
