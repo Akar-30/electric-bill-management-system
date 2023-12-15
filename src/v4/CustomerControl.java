@@ -51,7 +51,7 @@ public class CustomerControl {
                 String newSubType = scanner.nextLine();
                 customer.setSubscriptionType(newSubType);
             }
-            case "ampere number" -> {
+            case "amp" -> {
                 System.out.print("Enter new customer Ampere number (in Number): ");
                 int newSubQuantity = scanner.nextInt();
                 customer.setSubscriptionQuantity(newSubQuantity);
@@ -84,7 +84,7 @@ public class CustomerControl {
                     String customerName = scanner.nextLine();
                     System.out.print("Enter customer nickname: ");
                     String customerNickname = scanner.nextLine();
-                    System.out.print("Enter customer nickname: ");
+                    System.out.print("Enter customer gender: ");
                     String customerGender = scanner.nextLine();
                     System.out.print("Enter customer phone number: ");
                     String customerPhoneNumber = scanner.nextLine();

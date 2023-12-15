@@ -1,40 +1,30 @@
-package v4;
+package v5;
 
-import java.util.Random;
+public class Employee extends Person {
+    private double salary;
+    private String employeeType;
 
-class Customer extends Person {
-    private  String subscriptionType;
-    private  int subscriptionQuantity;
-    private final String status;
-
-    public Customer(String name, String nickname,String gender, String phoneNumber,String address, String email,String subscriptionType, int subscriptionQuantity) {
-        super( name, nickname,gender, phoneNumber, address, email);
-        this.subscriptionQuantity=subscriptionQuantity;
-        this.subscriptionType=subscriptionType;
-        Random random = new Random();
-        boolean randomBoolean = random.nextBoolean();
-        status = randomBoolean?"Payed":"Not Payed";
+    public Employee(String name, String nickname, String gender, String phoneNumber, String address, String email, double salary, String employeeType) {
+        super(name, nickname, gender, phoneNumber, address, email);
+        this.salary = salary;
+        this.employeeType = employeeType;
     }
 
-    // Getters and Setters for Customer properties
-    public String getSubscriptionType() {
-        return subscriptionType;
+    // Getters and Setters for Employee properties
+    public double getSalary() {
+        return salary;
     }
 
-    public String getStatus() {
-        return status;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
-    public void setSubscriptionType(String subscriptionType) {
-        this.subscriptionType = subscriptionType;
+    public String getEmployeeType() {
+        return employeeType;
     }
 
-    public double getSubscriptionQuantity() {
-        return subscriptionQuantity;
-    }
-
-    public void setSubscriptionQuantity(int subscriptionQuantity) {
-        this.subscriptionQuantity = subscriptionQuantity;
+    public void setEmployeeType(String employeeType) {
+        this.employeeType = employeeType;
     }
 
     @Override
@@ -56,7 +46,6 @@ class Customer extends Person {
     public String getAddress() {
         return super.getAddress();
     }
-
 
     @Override
     public String getEmail() {

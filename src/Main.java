@@ -1,9 +1,9 @@
-import v4.ControlPanel;
+import v5.MainScreen;
 
 public class Main {
     public static void main(String[] args) {
 
-        ControlPanel cp = new ControlPanel();
+        MainScreen cp = new MainScreen();
         cp.mainScreen();
     }
 }
