@@ -34,13 +34,4 @@ public class MySQLConnector {
         }
     }
 
-//    public static void main(String[] args) {
-//        MySQLConnector connector = new MySQLConnector();
-//        Connection conn = connector.getConnection();
-//
-//        // Perform database operations using the 'conn' connection object
-//
-//        // Don't forget to close the connection when done
-//        connector.closeConnection();
-//    }
 }

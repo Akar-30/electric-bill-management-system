@@ -3,15 +3,16 @@ package v5;
 import java.util.Random;
 
 class Customer extends Person {
-    private  String subscriptionType;
-    private  int subscriptionQuantity;
+    private final String subscriptionType;
+    private final int subscriptionQuantity;
     private final String status;
-    private double balance;
+    private final double balance;
 
-    public Customer(String name, String nickname,String gender, String phoneNumber,String address, String email,String subscriptionType, int subscriptionQuantity) {
+    public Customer(String name, String nickname, String gender, String phoneNumber, String address, String email, String subscriptionType, int subscriptionQuantity, double balance) {
         super( name, nickname,gender, phoneNumber, address, email);
         this.subscriptionQuantity=subscriptionQuantity;
         this.subscriptionType=subscriptionType;
+        this.balance = balance;
         Random random = new Random();
         boolean randomBoolean = random.nextBoolean();
         status = randomBoolean?"Payed":"Not Payed";
@@ -23,9 +24,6 @@ class Customer extends Person {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
 
     public String getSubscriptionType() {
         return subscriptionType;
@@ -35,16 +33,8 @@ class Customer extends Person {
         return status;
     }
 
-    public void setSubscriptionType(String subscriptionType) {
-        this.subscriptionType = subscriptionType;
-    }
-
     public int getSubscriptionQuantity() {
         return subscriptionQuantity;
-    }
-
-    public void setSubscriptionQuantity(int subscriptionQuantity) {
-        this.subscriptionQuantity = subscriptionQuantity;
     }
 
     @Override

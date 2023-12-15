@@ -40,9 +40,6 @@ public class CustomerDbControl {
     private static void displayTable(String[] data) {
         int numColumns = data.length;
 
-        // Calculate column widths
-        int[] columnWidths = calculateColumnWidths(data);
-
         // Display table content
         int numRows = (int) Math.ceil((double) data.length / numColumns);
         for (int i = 0; i < numRows; i++) {
@@ -54,16 +51,6 @@ public class CustomerDbControl {
             }
             System.out.println();
         }
-    }
-
-    private static int[] calculateColumnWidths(String[] data) {
-        int numColumns = data.length;
-        int[] columnWidths = new int[numColumns];
-
-        for (int i = 0; i < numColumns; i++) {
-            columnWidths[i] = data[i].length();
-        }
-        return columnWidths;
     }
 
 

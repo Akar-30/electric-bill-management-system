@@ -47,7 +47,7 @@ public class CustomerScreen {
                     String customerSubType = scanner.nextLine();
                     System.out.print("Enter customer Ampere number (in Number): ");
                     int customerSubQuantity = scanner.nextInt();
-                    Customer newCustomer = new Customer(customerName, customerNickname,customerGender,customerPhoneNumber,customerAddress,customerEmail,customerSubType,customerSubQuantity);
+                    Customer newCustomer = new Customer(customerName, customerNickname,customerGender,customerPhoneNumber,customerAddress,customerEmail,customerSubType,customerSubQuantity,0);
                     customerDbControl.addCustomerToDatabase(newCustomer);
                     System.out.println("Customer added successfully!");
 

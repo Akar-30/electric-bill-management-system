@@ -44,10 +44,7 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" object-ref="schemas/oop/tables/customer" />
-      <object connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" object-ref="schemas/oop/tables/employee" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="a30d1ae7-0b30-44a4-9dd3-11799767f1ea" dataset="oop.customer" active-filter-id="6c7a19dc-38cc-41db-a4ca-dd0fbfc910e1">

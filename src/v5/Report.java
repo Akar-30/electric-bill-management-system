@@ -1,15 +1,13 @@
 package v5;
 
-import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 public class Report {
 
-    private Connection connection;
+    private final Connection connection;
 
     public Report(Connection connection) {
         this.connection = connection;

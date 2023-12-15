@@ -2,7 +2,7 @@ package v5;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class MainScreen {
@@ -37,7 +37,7 @@ public class MainScreen {
                     default -> System.out.println("Invalid choice. Please enter a valid option.");
                 }
             } while (choice != 4);
-
+            connector.closeConnection();
         } finally {
             if (dbConnection != null) {
                 try {

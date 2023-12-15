@@ -2,7 +2,7 @@ package v5;
 
 public class Employee extends Person {
     private double salary;
-    private String employeeType;
+    private final String employeeType;
 
     public Employee(String name, String nickname, String gender, String phoneNumber, String address, String email, double salary, String employeeType) {
         super(name, nickname, gender, phoneNumber, address, email);
@@ -21,10 +21,6 @@ public class Employee extends Person {
 
     public String getEmployeeType() {
         return employeeType;
-    }
-
-    public void setEmployeeType(String employeeType) {
-        this.employeeType = employeeType;
     }
 
     @Override
