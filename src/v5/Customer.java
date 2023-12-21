@@ -13,9 +13,9 @@ class Customer extends Person {
         this.subscriptionQuantity=subscriptionQuantity;
         this.subscriptionType=subscriptionType;
         this.balance = balance;
-        Random random = new Random();
-        boolean randomBoolean = random.nextBoolean();
-        status = randomBoolean?"Payed":"Not Payed";
+        //Random random = new Random();
+        //boolean randomBoolean = random.nextBoolean();
+        status = "Not Payed";
     }
 
     // Getters and Setters for Customer properties

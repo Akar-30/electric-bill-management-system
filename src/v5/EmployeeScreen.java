@@ -44,10 +44,11 @@ public class EmployeeScreen {
                     System.out.print("Enter employee email: ");
                     String empEmail = scanner.nextLine();
                     System.out.print("Enter employee type (Full-time, Part-time): ");
+                    String empType = scanner.nextLine();
                     System.out.print("Enter employee salary:(in IQD) ");
                     double empSalary = scanner.nextDouble();
                     scanner.nextLine(); // Consume newline
-                    String empType = scanner.nextLine();
+
 
                     Employee newEmployee = new Employee(empName, empNickname, empGender, empPhoneNumber, empAddress, empEmail, empSalary, empType);
                     employeeDbControl.addEmployeeToDatabase(newEmployee);

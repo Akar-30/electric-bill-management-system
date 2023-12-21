@@ -77,17 +77,18 @@ public class CustomerDbControl {
                     String lastName = resultSet.getString("nickName");
                     String phoneNumber = resultSet.getString("phoneNumber");
                     String subscriptionType = resultSet.getString("subscriptionType");
-                    int subscriptionQuantity = resultSet.getInt("ampere");
+                    int ampere = resultSet.getInt("ampere");
                     String status = resultSet.getString("status");
                     double balance = resultSet.getDouble("balance");
-
+                    double amount = subscriptionType.equals("24-Hours") ?ampere * 10000:ampere*5000;
+                    balance= status.equals("Not Payed") ?amount:0;
                     // Formatted row data
                     String[] rowData = {
                             String.valueOf(customerId),
                             firstName + " " + lastName,
                             phoneNumber,
                             subscriptionType,
-                            String.valueOf(subscriptionQuantity),
+                            String.valueOf(ampere),
                             status,
                             String.valueOf(balance)
                     };

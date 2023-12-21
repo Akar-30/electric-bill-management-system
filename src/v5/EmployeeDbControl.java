@@ -129,6 +129,13 @@ public class EmployeeDbControl {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        if (columnName.equals("type")){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Enter new value for Salary");
+            String newValue2 = scan.nextLine();
+
+            updateEmployeeInfo(employeeId,"salary",newValue2); //Recursion
+        }
     }
 
     //DISPLAY
@@ -149,7 +156,9 @@ public class EmployeeDbControl {
     // Method to get user input for ID, column index, and new value
     public void getUserInputAndUpdate() {
         Scanner scanner = new Scanner(System.in);
-        EmployeeDbControl custDbControl = new EmployeeDbControl(connection);
+        EmployeeDbControl empDbControl = new EmployeeDbControl(connection);
+
+
 
         // Display the table of column names with index numbers
         displayColumnTable();
@@ -161,13 +170,13 @@ public class EmployeeDbControl {
         System.out.print("Enter column index to update: ");
         int columnIndex = scanner.nextInt();
 
-        scanner.nextLine(); // Consume newline left from nextInt()
-
+        scanner.nextLine();
         System.out.print("Enter new value: ");
-        String newValue = scanner.nextLine();
 
+        String newValue = scanner.nextLine();
         // Call the update method with provided details
-        custDbControl.updateEmployeeInfo(employeeId, getColumnName(columnIndex), newValue);
+        empDbControl.updateEmployeeInfo(employeeId, getColumnName(columnIndex), newValue);
+
     }
 
     // Method to retrieve column name based on index
@@ -182,5 +191,42 @@ public class EmployeeDbControl {
         }
         return "";
     }
+
+
+    //Retrieve Last Employee
+    public void retrieveLastEmployee() {
+        String sql = "SELECT idEmployee, fName FROM employee ORDER BY idEmployee DESC LIMIT 1";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            if (!resultSet.isBeforeFirst()) {
+                System.out.println("No Employees found in the database.");
+            } else {
+                System.out.println("Your ID and Name is: Use it for login");
+
+
+                // Table headers
+                String[] headers = {"ID", "Name"};
+                displayTable(headers);
+
+                while (resultSet.next()) {
+                    int employeeId = resultSet.getInt("idEmployee");
+                    String firstName = resultSet.getString("fName");
+
+                    // Formatted row data
+                    String[] rowData = {
+                            String.valueOf(employeeId),
+                            firstName
+                    };
+
+                    displayTable(rowData);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
